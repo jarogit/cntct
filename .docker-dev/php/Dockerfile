@@ -22,11 +22,13 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     zlib1g-dev \
     libicu-dev \
     libzip-dev \
+    unzip \
     git
 
 RUN docker-php-ext-configure pcntl --enable-pcntl \
     && docker-php-ext-configure intl \
     && docker-php-ext-install \
+        pdo pdo_mysql mysqli \
         pcntl \
         intl \
     && docker-php-ext-configure gd \

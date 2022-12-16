@@ -38,6 +38,8 @@ services:
         restart: always
         environment:
             MARIADB_ROOT_PASSWORD: password
+        networks:
+            - network-cntct
 
 networks:
     network-cntct:
