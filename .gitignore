@@ -1,0 +1,13 @@
+/.docker-dev/.env
+/.docker-dev/docker-compose.override.yml
+/.docker-dev/locals
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
