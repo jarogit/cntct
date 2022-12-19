@@ -30,6 +30,7 @@ services:
         working_dir: /sources
         volumes:
             - ./..:/sources:cached
+            - ./php/php.ini:/usr/local/etc/php/conf.d/99-overrides.ini
         networks:
             - network-cntct
 
