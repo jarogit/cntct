@@ -36,6 +36,7 @@ services:
 
     cntct-db:
         image: mariadb:10.9.4
+        container_name: cntct-db
         restart: always
         environment:
             MARIADB_ROOT_PASSWORD: password
