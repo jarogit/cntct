@@ -21,7 +21,7 @@ bashr:
 bashw:
 	docker-compose exec cntct-nginx ash
 log:
-	tail -F ../var/log/dev.log
+	tail -F ../var/log/php_system.log
 logp:
 	docker-compose logs cntct-php
 logw:

@@ -8,6 +8,7 @@ class Error400
 {
     const VALIDATION = 'validation-error';
 	const ENTITY_NOT_FOUND = 'entity-not-found';
+    const UNAUTHORIZED = 'unauthorized';
 
 	/**
 	 * @JMS\Type("string")
