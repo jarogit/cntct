@@ -1,1 +1,1 @@
-# cntct
+# Adresář kontaktů
