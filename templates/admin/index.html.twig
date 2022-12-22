@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    <h1>Skupiny kontaktů</h1>
+    <table id="js--content">
+        <tr><td>Název</td></tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            callApi('/api/contact/category', function(json) {
+                var html = '';
+                json.data.forEach(item => html += '<tr><td>' + item.name + '</td><td>');
+                $('#js--content tr').first().after(html);
+            });
+        });
+    </script>
+{% endblock %}

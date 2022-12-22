@@ -9,15 +9,15 @@ class TokenGenerator extends AbstractIdGenerator
 {
     public function generate(EntityManager $em, $entity)
     {
-        $entityName = $em->getClassMetadata(get_class($entity))->getName();
+        $entityClass = $em->getClassMetadata(get_class($entity))->getName();
 
         $attempt = 100;
         while ($attempt--) {
             $id = sha1(random_bytes(32));
-            $item = $em->find($entityName, $id);
+            $item = $em->find($entityClass, $id);
             if (!$item) {
                 foreach ($em->getUnitOfWork()->getScheduledEntityInsertions() as $_entity) {
-                    if (is_subclass_of($_entity, $entityName) && $_entity->getId() === $id) {
+                    if (is_subclass_of($_entity, $entityClass) && $_entity->getId() === $id) {
                         continue 2;
                     }
                 }
